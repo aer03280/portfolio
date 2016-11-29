@@ -1,5 +1,15 @@
-
-
 .navStyle {
+  list-style-type: none;
+  height: 2em;
+  width: 100%;
+}
 
+.link {
+  display: inline-block;
+  float: right;
+  padding-left: .5em;
+  padding-right: .5em;
+  margin-right: .5em;
+  margin-bottom: 125px;
+  vertical-align: top;
 }

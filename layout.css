@@ -1,4 +1,10 @@
-.nameStyle {
+.nameBar {
+  background-color: grey;
+  color: black;
+  font-size: 2em;
+  height: 4em;
+  width: 100%;
+
 
 }
 
