@@ -1,0 +1,17 @@
+.nameBar {
+  background-color: grey;
+  color: black;
+  font-size: 2em;
+  height: 4em;
+  width: 100%;
+
+
+
+}
+
+.foot {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 40px 0px 20px;
+}
