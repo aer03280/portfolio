@@ -24,7 +24,7 @@ var projectData = [
 
 ];
 
-var articles = [];
+var arts = [];
 
 function Articles (projects) {
   this.title = projects.title;
@@ -35,13 +35,26 @@ function Articles (projects) {
 }
 
 
-Article.prototype.toHtml = function() {
+Articles.prototype.toHtml = function() {
   var $newArticle = $('article.projectStyle').clone();
   $newArticle.find('h1').text(this.title);
-  $newArticle.find('time.pubdate').attr('title', this.dateCreated);
   $newArticle.find('div a').attr('href', this.previewUrl);
   $newArticle.find('div img').attr('src', this.preview);
   $newArticle.find('section.summary').html(this.description);
+  $newArticle.find('time.pubdate').attr('title', this.dateCreated);
+  $newArticle.fine('time').text(parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
   $newArticle.removeClass('projectStyle');
   return $newArticle;
 }
+
+projectData.sort(function(currentObject, nextObject) {
+  return(new Date(nextObject.dateCreated)) - (new Date(currentObject.dateCreated));
+});
+
+projectData.forEach(function(artObj){
+  arts.push(new Articles(artObj));
+});
+
+arts.forEach(function(artObj){
+  $('#projects').append(artObj.toHtml());
+});
