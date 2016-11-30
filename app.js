@@ -42,7 +42,7 @@ Articles.prototype.toHtml = function() {
   $newArticle.find('div img').attr('src', this.preview);
   $newArticle.find('section.summary').html(this.description);
   $newArticle.find('time.pubdate').attr('title', this.dateCreated);
-  $newArticle.fine('time').text(parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
+  $newArticle.find('time').text(parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
   $newArticle.removeClass('projectStyle');
   return $newArticle;
 }
@@ -55,6 +55,6 @@ projectData.forEach(function(artObj){
   arts.push(new Articles(artObj));
 });
 
-arts.forEach(function(artObj){
+arts.forEach(function(artObj) {
   $('#projects').append(artObj.toHtml());
 });
