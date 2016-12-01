@@ -3,14 +3,14 @@ var projectData = [
     title: 'About Me',
     preview: 'https://placekitten.com/300/300',
     previewUrl: 'https://github.com/aer03280/about_me',
-    dateCreated: '2016-18-10',
+    dateCreated: '2016-10-18',
     description: '<p>This is a site I built with a get-to-know Ashley game.</p>',
   },
   {
     title: 'Trip Planner',
     preview: 'https://placekitten.com/300/300',
     previewUrl: 'https://github.com/shortaj/Group_Project-Trip-Planner',
-    dateCreated: '2016-09-11',
+    dateCreated: '2016-11-09',
     description: '<p>This application was created as a group assignment. It helps you select a destination for your next vacation.</p>',
 
   },
@@ -18,9 +18,9 @@ var projectData = [
     title: 'The Cookie Stand',
     preview: 'https://placekitten.com/300/300',
     previewUrl: 'https://github.com/aer03280/cookie-stand',
-    dateCreated: '2016-24-10',
+    dateCreated: '2016-10-24',
     description: '<p>I created this site as a class assignment for a fictitious cookie shop.</p>',
-  }
+  },
 
 ];
 
@@ -36,16 +36,16 @@ function Articles (projects) {
 
 
 Articles.prototype.toHtml = function() {
-  var $newArticle = $('article.projectStyle').clone();
-  $newArticle.find('h1').text(this.title);
-  $newArticle.find('div a').attr('href', this.previewUrl);
-  $newArticle.find('div img').attr('src', this.preview);
+  var $newArticle = $('article.projectStyle').clone().removeClass('projectStyle');
+  $newArticle.find('h1:first').text(this.title);
+  $newArticle.find('.previewBox img').attr('src', this.preview);
+  $newArticle.find('.previewBox a').attr('href', this.previewUrl);
   $newArticle.find('section.summary').html(this.description);
-  $newArticle.find('time.pubdate').attr('title', this.dateCreated);
-  $newArticle.find('time').text(parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
-  $newArticle.removeClass('projectStyle');
+  $newArticle.find('time.pubdate:first').attr('title', this.dateCreated);
+  $newArticle.find('time').text('created ' + parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
   return $newArticle;
 }
+
 
 projectData.sort(function(currentObject, nextObject) {
   return(new Date(nextObject.dateCreated)) - (new Date(currentObject.dateCreated));
@@ -55,6 +55,6 @@ projectData.forEach(function(artObj){
   arts.push(new Articles(artObj));
 });
 
-arts.forEach(function(artObj) {
-  $('#projects').append(artObj.toHtml());
+arts.forEach(function(a) {
+  $('#projects').append(a.toHtml());
 });
