@@ -59,3 +59,16 @@ projectData.forEach(function(artObj){
 arts.forEach(function(a) {
   $('#projects').append(a.toHtml());
 });
+
+// var projectView = {};
+
+
+projectData.handleNav = function () {
+  $('.navMain').on('click' , '.nav' , function() {
+    $('.navContent').hide();
+    $('#' + $(this).attr('data-content')).fadeIn(700);
+  });
+  $('.navMain .nav:first').click();
+};
+
+projectData.handleNav();
