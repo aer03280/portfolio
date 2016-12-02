@@ -24,16 +24,6 @@ var projectData = [
 
 ];
 
-// var arts = [];
-
-// function Articles (projects) {
-//   this.title = projects.title;
-//   this.preview = projects.preview;
-//   this.previewUrl = projects.previewUrl;
-//   this.dateCreated = projects.dateCreated;
-//   this.description = projects.description;
-// }
-
 var arts = [];
 function Articles (opts) {
   for (key in opts) {
@@ -42,9 +32,8 @@ function Articles (opts) {
 };
 
 Articles.prototype.toHtml = function() {
-  // $('.date').html().find('time').text('created ' + parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
   this.daysAgo = parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.';
-  this.publishStatus = this.dateCreated ? 'created on ' + this.daysAgo + '.' : '(draft)';
+  this.publishStatus = this.dateCreated ? 'created ' + this.daysAgo: '(draft)';
   var $source = $('#project-template').html();
   var templateRender = Handlebars.compile($source);
   return templateRender(this);

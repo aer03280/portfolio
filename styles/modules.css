@@ -1,10 +1,22 @@
 .article-data {
   list-style-type: none;
   background-color: blue;
+  width: 75%;
+  height: 300px;
+
 }
 
 .summaryTest {
   border-bottom: 2px solid red;
   margin: 10px;
   padding: 10px;
+}
+
+#previewBox {
+  background-color: orange;
+}
+
+#previewImg {
+  width: 25%;
+  height: 25%;
 }
