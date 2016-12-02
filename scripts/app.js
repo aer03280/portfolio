@@ -24,16 +24,22 @@ var projectData = [
 
 ];
 
+// var arts = [];
+
+// function Articles (projects) {
+//   this.title = projects.title;
+//   this.preview = projects.preview;
+//   this.previewUrl = projects.previewUrl;
+//   this.dateCreated = projects.dateCreated;
+//   this.description = projects.description;
+// }
+
 var arts = [];
-
-function Articles (projects) {
-  this.title = projects.title;
-  this.preview = projects.preview;
-  this.previewUrl = projects.previewUrl;
-  this.dateCreated = projects.dateCreated;
-  this.description = projects.description;
-}
-
+function Articles (opts) {
+  for (key in opts) {
+    this[key] = opts[key];
+  }
+};
 
 Articles.prototype.toHtml = function() {
   var $source = $('#project-template').html();
