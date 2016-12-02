@@ -8,16 +8,17 @@
       <link rel="stylesheet" href="styles/layout.css">
       <link rel="stylesheet" href="styles/modules.css">
       <script src="https://use.fontawesome.com/40aae31390.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Josefin+Sans" rel="stylesheet">
       <script id="project-template" type="text/x-handlebars-template">
         <article class="article-data">
         <header>
-          <h1>{{title}}</h1>
+          <h1 id="titleStyle">{{title}}</h1>
           <div class="date">{{publishStatus}}</div>
           <div>
             <div id="previewBox">
             <a href="{{{previewUrl}}}" target="_blank"><img id="previewImg" src="{{{preview}}}"></a>
+            <div id="descriptionStyle"><p>{{{description}}}</p></div>
             </div>
-            <p>{{{description}}}</p>
           </div>
         </header>
         </article>
@@ -25,10 +26,10 @@
   </head>
   <body>
   <header>
+    <div><i class="fa fa-bars" id="hamIcon" aria-hidden="true"></i>
+    </div>
     <section class="nameBar">
      <h1>Ashley Ross</h1>
-     <div><i class="fa fa-bars" id="hamIcon" aria-hidden="true"></i>
-     </div>
     <nav class="navMain">
       <ul>
         <li class="link nav" data-content="projects"><a href="#" class="iconHome">Home</a></li>
