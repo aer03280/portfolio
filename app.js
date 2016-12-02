@@ -36,15 +36,18 @@ function Articles (projects) {
 
 
 Articles.prototype.toHtml = function() {
-  var $newArticle = $('article.projectStyle').clone();
-  $newArticle.find('h1:first').text(this.title);
-  $newArticle.find('.previewBox img').attr('src', this.preview);
-  $newArticle.find('.previewBox a').attr('href', this.previewUrl);
-  $newArticle.find('section.summary').addClass('summaryTest').html(this.description);
-  $newArticle.find('time.pubdate:first').attr('title', this.dateCreated);
+  var $source = $('#project-template').html();
+  var templateRender = Handlebars.compile($source);
+  return templateRender(this);
+  // var $newArticle = $('article.projectStyle').clone();
+  // $newArticle.find('h1:first').text(this.title);
+  // $newArticle.find('.previewBox img').attr('src', this.preview);
+  // $newArticle.find('.previewBox a').attr('href', this.previewUrl);
+  // $newArticle.find('section.summary').addClass('summaryTest').html(this.description);
+  // $newArticle.find('time.pubdate:first').attr('title', this.dateCreated);
   $newArticle.find('time').text('created ' + parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
-  $newArticle.removeClass('projectStyle');
-  return $newArticle;
+  // $newArticle.removeClass('projectStyle');
+  // return $newArticle;
 }
 
 
