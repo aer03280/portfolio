@@ -42,10 +42,12 @@ function Articles (opts) {
 };
 
 Articles.prototype.toHtml = function() {
+  // $('.date').html().find('time').text('created ' + parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
+  this.daysAgo = parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.';
+  this.publishStatus = this.dateCreated ? 'created on ' + this.daysAgo + '.' : '(draft)';
   var $source = $('#project-template').html();
   var templateRender = Handlebars.compile($source);
   return templateRender(this);
-  $newArticle.find('time').text('created ' + parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.');
 }
 
 
@@ -60,7 +62,6 @@ projectData.forEach(function(artObj){
 arts.forEach(function(a) {
   $('#projects').append(a.toHtml());
 });
-
 
 projectData.handleNav = function () {
   $('.navMain').on('click' , '.nav' , function() {

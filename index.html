@@ -9,17 +9,22 @@
       <link rel="stylesheet" href="styles/modules.css">
       <script src="https://use.fontawesome.com/40aae31390.js"></script>
       <script id="project-template" type="text/x-handlebars-template">
+      <!-- <section class="navContent" id="projects"> -->
         <article class="article-data">
         <header>
           <h1>{{title}}</h1>
           <div>
-            {{{preview}}}
-            {{{previewUrl}}}
-            {{dateCreated}}
+            <div class="previewBox">
+            <a href="{{{previewUrl}}}" target="_blank"><img src="{{{preview}}}"></a>
+            </div>
+            <div class="date">
+              {{publishStatus}}
+          </div>
             {{{description}}}
           </div>
         </header>
         </article>
+      <!-- </section> -->
       </script>
   </head>
   <body>
