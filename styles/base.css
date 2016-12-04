@@ -1,6 +1,6 @@
 .navStyle {
   list-style-type: none;
-  height: 2em;
+  height: 1em;
   width: 100%;
 }
 
@@ -18,6 +18,8 @@
     margin-right: .5em;
     margin-bottom: 125px;
     vertical-align: top;
+    font-family: 'Josefin Sans', sans-serif;
+
   }
     #hamIcon {
       display: none;
@@ -28,5 +30,5 @@
   float: right;
   padding-top: 0px;
   padding-right: 0px;
-  font-size: 2em;
+  font-size: 3em;
 }

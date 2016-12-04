@@ -1,0 +1,47 @@
+.article-data {
+  list-style-type: none;
+  background-color: blue;
+  width: 75%;
+  height: 300px;
+  margin-left: 12%;
+
+}
+
+.summaryTest {
+  border-bottom: 2px solid red;
+  margin: 10px;
+  padding: 10px;
+}
+
+#titleStyle {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2em;
+  padding-top: .5em;
+}
+
+.date {
+  font-size: 1.25em;
+  font-family: 'Josefin Sans', sans-serif;
+  padding-bottom: 1em;
+}
+
+#previewBox {
+  display: inline;
+  float: left;
+
+  background-color: orange;
+
+}
+
+#previewImg {
+  display: block;
+  float: left;
+  width: 25%;
+  height: 25%;
+}
+
+#descriptionStyle {
+  font-family: 'Josefin Sans', sans-serif;
+  padding-left: 5em;
+  font-size: 1.5em;
+}
