@@ -1,29 +1,3 @@
-var projectData = [
-  {
-    title: 'About Me',
-    preview: 'https://placekitten.com/300/300',
-    previewUrl: 'https://github.com/aer03280/about_me',
-    dateCreated: '2016-10-18',
-    description: '<p>This is a site I built with a get-to-know Ashley game. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
-  },
-  {
-    title: 'Trip Planner',
-    preview: 'https://placekitten.com/300/300',
-    previewUrl: 'https://github.com/shortaj/Group_Project-Trip-Planner',
-    dateCreated: '2016-11-09',
-    description: '<p>This application was created as a group assignment. It helps you select a destination for your next vacation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
-
-  },
-  {
-    title: 'The Cookie Stand',
-    preview: 'https://placekitten.com/300/300',
-    previewUrl: 'https://github.com/aer03280/cookie-stand',
-    dateCreated: '2016-10-24',
-    description: '<p>I created this site as a class assignment for a fictitious cookie shop. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
-  },
-
-];
-
 var arts = [];
 function Articles (opts) {
   for (key in opts) {
@@ -39,7 +13,6 @@ Articles.prototype.toHtml = function() {
   return templateRender(this);
 }
 
-
 projectData.sort(function(currentObject, nextObject) {
   return(new Date(nextObject.dateCreated)) - (new Date(currentObject.dateCreated));
 });
@@ -52,6 +25,24 @@ arts.forEach(function(a) {
   $('#projects').append(a.toHtml());
 });
 
+
+// use JSON to store data in localStorage
+Articles.fetchAll = function() {
+  if(localStorage.projectData) {
+    Articles.loadAll(JSON.parse(localStorage.projectData));
+    // articleView.renderIndexPage();
+    projectData.handleNav();
+  } else {
+    $.getJSON('scripts/data.js', function(data) {
+      localStorage.projectData = JSON.stringify(data);
+      Articles.loadAll(JSON.parse(localStorage.projectData));
+      // articleView.renderIndexPage();
+      projectData.handleNav();
+    });
+  }
+};
+
+// Hide about and home tabs when the other is clicked
 projectData.handleNav = function () {
   $('.navMain').on('click' , '.nav' , function() {
     $('.navContent').hide();
@@ -61,3 +52,4 @@ projectData.handleNav = function () {
 };
 
 projectData.handleNav();
+Articles.fetchAll();
