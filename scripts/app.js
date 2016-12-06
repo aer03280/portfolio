@@ -1,11 +1,11 @@
-var arts = [];
-function Articles (opts) {
+var proj = [];
+function Projects (opts) {
   for (key in opts) {
     this[key] = opts[key];
   }
 };
 
-Articles.prototype.toHtml = function() {
+Projects.prototype.toHtml = function() {
   this.daysAgo = parseInt((new Date() - new Date(this.dateCreated))/60/60/24/1000) + ' days ago.';
   this.publishStatus = this.dateCreated ? 'created ' + this.daysAgo: '(draft)';
   var $source = $('#project-template').html();
@@ -18,26 +18,24 @@ projectData.sort(function(currentObject, nextObject) {
 });
 
 projectData.forEach(function(artObj){
-  arts.push(new Articles(artObj));
+  proj.push(new Projects(artObj));
 });
 
-arts.forEach(function(a) {
+proj.forEach(function(a) {
   $('#projects').append(a.toHtml());
 });
 
 
 // use JSON to store data in localStorage
-Articles.fetchAll = function() {
+Projects.fetchAll = function() {
   if(localStorage.projectData) {
-    Articles.loadAll(JSON.parse(localStorage.projectData));
-    // articleView.renderIndexPage();
-    projectData.handleNav();
+    Projects.loadAll(JSON.parse(localStorage.projectData));
+    articleView.renderPage
   } else {
-    $.getJSON('scripts/data.js', function(data) {
+    $.getJSON('data/projectData.json', function(data) {
       localStorage.projectData = JSON.stringify(data);
-      Articles.loadAll(JSON.parse(localStorage.projectData));
-      // articleView.renderIndexPage();
-      projectData.handleNav();
+      Projects.loadAll(JSON.parse(localStorage.projectData));
+      articleView.renderPage
     });
   }
 };
@@ -52,4 +50,4 @@ projectData.handleNav = function () {
 };
 
 projectData.handleNav();
-Articles.fetchAll();
+Projects.fetchAll();
