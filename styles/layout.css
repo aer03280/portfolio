@@ -3,10 +3,16 @@
   background-color: grey;
   color: black;
   font-size: 2em;
-  height: 4em;
+  height: 14em;
   width: 100%;
   font-family: 'Josefin Sans', sans-serif;
   margin-top: 1em;
+  margin-bottom: .5em;
+}
+
+#headerStyle {
+  height: 90%;
+  width: 110%;
 }
 
 .foot {
