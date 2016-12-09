@@ -11,19 +11,27 @@
       <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Josefin+Sans" rel="stylesheet">
       <script id="project-template" type="text/x-handlebars-template">
         <article class="article-data">
-        <header>
-          <h1 id="titleStyle">{{title}}</h1>
+        <div id="backgroundBox">
+        <header id="headerStyle">
+          <div id="titleStyle"><h1 id="hOneStyle">{{title}}</h1></div>
           <div class="date">{{publishStatus}}</div>
           <div>
             <div id="previewBox">
             <a href="{{{previewUrl}}}" target="_blank"><img id="previewImg" src="{{{preview}}}"></a>
             <div id="descriptionStyle"><p>{{{description}}}</p></div>
             </div>
-          </div>
+        </div>
         </header>
+      </div>
         </article>
       </script>
-  </head>
+      <script id="assigned-filter-template" type="text/x-handlebars-template">
+        <option value="{{assigned}}">{{assigned}}</option>
+      </script>
+      <script id="category-filter-template" type="text/x-handlebars-template">
+        <option value="{{category}}">{{category}}</option>
+      </script>
+    </head>
   <body>
   <header>
     <div><i class="fa fa-bars" id="hamIcon" aria-hidden="true"></i>
@@ -43,20 +51,20 @@
   </header>
   <main>
     <section id="projects"></section>
-
-    <!-- <section class="navContent" id="projects">
-      <article class="projectStyle">
-        <header>
-          <h1>HI<h1>
-            <div class="date">
-              <time pubdate datetime="2000-01-01"></time>
-            </div>
-            <div class="previewBox"><a href="#" target="_blank"><img src=""></a>
-            </div>
-        </header>
-        <section class="summary"></section>
-      </article>
-    </section> -->
+    <div id="filterStyle">
+      <ul id="filters">
+        <li>
+          <select id="assigned-filter">
+            <option value="">-- Filter by Assignment --</option>
+          </select>
+        </li>
+        <li>
+          <select id="category-filter">
+            <option value="">-- Filter by Categories --</option>
+          </select>
+        </li>
+      </ul>
+    </div>
     <section id="aboutMe" class="navContent">
       <header>
         <h1>About Ashley</h1>
@@ -69,7 +77,8 @@
     <footer class="foot">&#169 2016 | Portfolio | Ashley Ross</footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-  <script type="text/javascript" src="scripts/projectView.js" charset="utf-8"></script>
+  <script type="text/javascript" src="scripts/data.js" charset="utf-8"></script>
+  <!-- <script type="text/javascript" src="scripts/projectView.js" charset="utf-8"></script> -->
   <script type="text/javascript" src="scripts/app.js" charset="utf-8"></script>
   </body>
 </html>
