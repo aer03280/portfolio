@@ -11,6 +11,7 @@
       <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Josefin+Sans" rel="stylesheet">
       <script id="project-template" type="text/x-handlebars-template">
         <article class="article-data">
+        <div id="backgroundBox">
         <header id="headerStyle">
           <div id="titleStyle"><h1 id="hOneStyle">{{title}}</h1></div>
           <div class="date">{{publishStatus}}</div>
@@ -19,8 +20,9 @@
             <a href="{{{previewUrl}}}" target="_blank"><img id="previewImg" src="{{{preview}}}"></a>
             <div id="descriptionStyle"><p>{{{description}}}</p></div>
             </div>
-          </div>
+        </div>
         </header>
+      </div>
         </article>
       </script>
       <script id="assigned-filter-template" type="text/x-handlebars-template">
@@ -76,7 +78,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
   <script type="text/javascript" src="scripts/data.js" charset="utf-8"></script>
-  <script type="text/javascript" src="scripts/projectView.js" charset="utf-8"></script>
+  <!-- <script type="text/javascript" src="scripts/projectView.js" charset="utf-8"></script> -->
   <script type="text/javascript" src="scripts/app.js" charset="utf-8"></script>
   </body>
 </html>

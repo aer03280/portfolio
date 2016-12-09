@@ -30,12 +30,12 @@ proj.forEach(function(a) {
 Projects.fetchAll = function() {
   if(localStorage.projectData) {
     Projects.loadAll(JSON.parse(localStorage.projectData));
-    articleView.renderPage
+    articleView.renderPage();
   } else {
     $.getJSON('data/projectData.json', function(data) {
       localStorage.projectData = JSON.stringify(data);
       Projects.loadAll(JSON.parse(localStorage.projectData));
-      articleView.renderPage
+      articleView.renderPage();
     });
   }
 };
