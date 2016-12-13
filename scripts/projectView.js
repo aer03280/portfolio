@@ -1,3 +1,4 @@
+(function(module) {
 var articleView = {};
 
 articleView.handleAssignedFilter = function() {
@@ -39,3 +40,5 @@ articleView.renderPage = function() {
   articleView.handleCategoryFilter();
   articleView.handleAssignedFilter();
 };
+module.articleView = articleView;
+})(window);
