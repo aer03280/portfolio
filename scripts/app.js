@@ -40,7 +40,7 @@ Projects.fetchAll = function() {
   }
 };
 
-// Hide about and home tabs when the other is clicked // currently hidden bc routes.js
+// Hide about and home tabs when the other is clicked // currently greyed bc routes.js
 // projectData.handleNav = function () {
 //   $('.navMain').on('click' , '.nav' , function() {
 //     $('.navContent').hide();
