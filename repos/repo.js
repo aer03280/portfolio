@@ -6,9 +6,9 @@
 // TODONE: create a githubToken.js file that we can use to generate our headers
          // properly.
     $.ajax({
-      url: 'https://api.github.com/users/codefellows/repos',
+      url: 'https://api.github.com/users/aer03280/repos',
       type: 'GET',
-      headers: {'Authorization': 'token ' + '6d0895931736a92cfbc299e55a1d180371077714'},
+      headers: {'Authorization': 'token ' + token},
       success:
       function(data) {
         repos.allRepos = data;

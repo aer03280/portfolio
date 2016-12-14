@@ -8,8 +8,8 @@
   /* NOTE: If all the data is loaded, we can
       render the repos. ``*/
   repoView.renderRepos = function() {
-    $('#aboutMe #projectList').empty().append(
-      repos.withTheAttribute('title')
+    $('#projects .projectList').empty().append(
+      repos.withTheAttribute('name')
       .map(repoCompiler)
     );
   };
