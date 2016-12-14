@@ -8,7 +8,7 @@
     $.ajax({
       url: 'https://api.github.com/users/codefellows/repos',
       type: 'GET',
-      headers: {'Authorization': 'token ' + '33715a2863e525c88f1fd0b99872a8ece8a8c1a4'},
+      headers: {'Authorization': 'token ' + '6d0895931736a92cfbc299e55a1d180371077714'},
       success:
       function(data) {
         repos.allRepos = data;

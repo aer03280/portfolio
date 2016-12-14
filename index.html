@@ -9,23 +9,24 @@
       <link rel="stylesheet" href="styles/modules.css">
       <script src="https://use.fontawesome.com/40aae31390.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Josefin+Sans" rel="stylesheet">
-      <script id="project-template" type="text/x-handlebars-template">
+      <!-- <script id="project-template" type="text/x-handlebars-template"> -->
       <script id="repo-template" type="text/x-handlebars-template">
         <article class="article-data">
         <div id="backgroundBox">
-        <header id="headerStyle">
-          <div id="titleStyle"><h1 id="hOneStyle">{{title}}</h1></div>
-          <div class="date">{{publishStatus}}</div>
-          <div>
-            <div id="previewBox">
-            <a href="{{{previewUrl}}}" target="_blank"><img id="previewImg" src="{{{preview}}}"></a>
-            <div id="descriptionStyle"><p>{{{description}}}</p></div>
+          <header id="headerStyle">
+            <div id="titleStyle"><h1 id="hOneStyle">{{title}}</h1></div>
+            <!-- <div class="date">{{publishStatus}}</div> -->
+            <div>
+              <div id="previewBox">
+              <a href="{{{previewUrl}}}" target="_blank"><img id="previewImg" src="{{{preview}}}"></a>
+              <div id="descriptionStyle"><p>{{{description}}}</p></div>
             </div>
+            </div>
+          </header>
         </div>
-        </header>
-      </div>
         </article>
       </script>
+      <!-- </script> -->
       <script id="assigned-filter-template" type="text/x-handlebars-template">
         <option value="{{assigned}}">{{assigned}}</option>
       </script>
@@ -66,12 +67,13 @@
         </li>
       </ul>
     </div>
+    <section id="projectList">
+    </section>
   </section>
     <section id="aboutMe" class="navContent">
       <header>
-        <h1>Check out Ashey's Projects on Github:</h1>
+        <h1>This is a paragraph about Ashley:</h1>
       </header>
-      <section id="projectList"></section>
     </section>
     </main>
     <footer class="foot">&#169 2016 | Portfolio | Ashley Ross</footer>
@@ -81,8 +83,8 @@
     <script type="text/javascript" src="scripts/data.js" charset="utf-8"></script>
     <!-- <script type="text/javascript" src="scripts/projectView.js" charset="utf-8"></script> -->
     <script type="text/javascript" src="scripts/app.js" charset="utf-8"></script>
-    <script src="/scripts/repos/repo.js"></script>
-    <script src="/scripts/repos/repoView.js"></script>
+    <script src="repos/repo.js"></script>
+    <script src="repos/repoView.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/homeProjectsController.js"></script>
     <script src="scripts/controllers/routes.js"></script>

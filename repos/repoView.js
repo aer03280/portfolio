@@ -6,10 +6,10 @@
   var repoCompiler = Handlebars.compile($('#repo-template').html());
 
   /* NOTE: If all the data is loaded, we can
-      render the repos. */
+      render the repos. ``*/
   repoView.renderRepos = function() {
-    $('#about #projectList').empty().append(
-      repos.withTheAttribute('name')
+    $('#aboutMe #projectList').empty().append(
+      repos.withTheAttribute('title')
       .map(repoCompiler)
     );
   };
