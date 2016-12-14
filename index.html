@@ -10,6 +10,7 @@
       <script src="https://use.fontawesome.com/40aae31390.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Josefin+Sans" rel="stylesheet">
       <script id="project-template" type="text/x-handlebars-template">
+      <script id="repo-template" type="text/x-handlebars-template">
         <article class="article-data">
         <div id="backgroundBox">
         <header id="headerStyle">
@@ -50,7 +51,7 @@
   </section>
   </header>
   <main>
-    <section id="projects"></section>
+    <section id="projects">
     <div id="filterStyle">
       <ul id="filters">
         <li>
@@ -65,13 +66,12 @@
         </li>
       </ul>
     </div>
+  </section>
     <section id="aboutMe" class="navContent">
       <header>
-        <h1>About Ashley</h1>
+        <h1>Check out Ashey's Projects on Github:</h1>
       </header>
-      <section>
-        <p>This will be a paragraph about me!</p>
-      </section>
+      <section id="projectList"></section>
     </section>
     </main>
     <footer class="foot">&#169 2016 | Portfolio | Ashley Ross</footer>
@@ -81,6 +81,8 @@
     <script type="text/javascript" src="scripts/data.js" charset="utf-8"></script>
     <!-- <script type="text/javascript" src="scripts/projectView.js" charset="utf-8"></script> -->
     <script type="text/javascript" src="scripts/app.js" charset="utf-8"></script>
+    <script src="/scripts/repos/repo.js"></script>
+    <script src="/scripts/repos/repoView.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/homeProjectsController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
