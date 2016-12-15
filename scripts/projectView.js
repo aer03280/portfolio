@@ -1,6 +1,10 @@
 (function(module) {
 var articleView = {};
 
+articleView.aboutHide = function () {
+  $('#aboutMe').hide();
+};
+
 articleView.handleAssignedFilter = function() {
   $('#assigned-filter').on('change', function() {
     if ($(this).val()) {

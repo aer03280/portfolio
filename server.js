@@ -4,8 +4,7 @@ var express = require('express'),
   port = process.env.PORT || 3000,
   app = express();
 
-// NOTE: now use our proxy within a function to request
-//        our github data on the server.
+
 var proxyGithub = function(request, response) {
   console.log('Routing GitHub request for', request.params[0]);
   (requestProxy({
