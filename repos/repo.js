@@ -8,7 +8,7 @@
     $.ajax({
       url: 'https://api.github.com/users/aer03280/repos',
       type: 'GET',
-      headers: {'Authorization': 'token ' + token},
+      headers: {'Authorization': 'token ' + process.env.GITHUB_TOKEN},
       success:
       function(data) {
         repos.allRepos = data;
