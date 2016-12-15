@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ashley's Portfolio</title>
+      <link rel="stylesheet" href="styles/base.css">
+      <link rel="stylesheet" href="styles/layout.css">
+      <link rel="stylesheet" href="styles/modules.css">
+      <script src="https://use.fontawesome.com/40aae31390.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Josefin+Sans" rel="stylesheet">
+      <!-- <script id="project-template" type="text/x-handlebars-template"> -->
+      <script id="repo-template" type="text/x-handlebars-template">
+        <article class="article-data">
+        <div id="backgroundBox">
+          <header id="headerStyle">
+            <div id="titleStyle"><h1 id="hOneStyle">{{name}}</h1></div>
+            <!-- <div class="date">{{publishStatus}}</div> -->
+            <div>
+              <div id="previewBox">
+              <a href="{{{previewUrl}}}" target="_blank"><img id="previewImg" src="{{{preview}}}"></a>
+              <div id="descriptionStyle"><p>{{{description}}}</p></div>
+            </div>
+            </div>
+          </header>
+        </div>
+        </article>
+      </script>
+      <!-- </script> -->
+      <script id="assigned-filter-template" type="text/x-handlebars-template">
+        <option value="{{assigned}}">{{assigned}}</option>
+      </script>
+      <script id="category-filter-template" type="text/x-handlebars-template">
+        <option value="{{category}}">{{category}}</option>
+      </script>
+    </head>
+  <body>
+  <header>
+    <div><i class="fa fa-bars" id="hamIcon" aria-hidden="true"></i>
+    </div>
+    <section class="nameBar">
+     <h1>Ashley Ross</h1>
+    <nav class="navMain">
+      <ul>
+        <li class="link nav" data-content="projects"><a href="/" class="iconHome">Home</a></li>
+        <li class="link nav" data-content="aboutMe"><a href="/aboutMe" class="iconAbout">About Me</a></li>
+        <li class="link"><a href="https://github.com/aer03280" target="_blank">Github</a></li>
+        <li class="link"><a href="https://www.linkedin.com/in/ashley-ross-aa91101b" target="_blank">LinkedIn</a></li>
+        <li class="link"><a href="https://www.facebook.com/ashley.ross.9659" target="_blank">Facebook</a></li>
+      </ul>
+    </nav>
+  </section>
+  </header>
+  <main>
+    <section id="projects">
+    <div id="filterStyle">
+      <ul id="filters">
+        <li>
+          <select id="assigned-filter">
+            <option value="">-- Filter by Assignment --</option>
+          </select>
+        </li>
+        <li>
+          <select id="category-filter">
+            <option value="">-- Filter by Categories --</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+    <ul class="projectList">testing
+    </ul>
+  </section>
+    <section id="aboutMe" class="navContent">
+      <header>
+        <h1>This is a paragraph about Ashley:</h1>
+      </header>
+    </section>
+    </main>
+    <footer class="foot">&#169 2016 | Portfolio | Ashley Ross</footer>
+    <script src="vendor/page.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script type="text/javascript" src="scripts/data.js" charset="utf-8"></script>
+    <script type="text/javascript" src="token/githubToken.js"></script>
+
+    <!-- <script type="text/javascript" src="scripts/projectView.js" charset="utf-8"></script> -->
+    <script type="text/javascript" src="scripts/app.js" charset="utf-8"></script>
+    <script src="repos/repo.js"></script>
+    <script src="repos/repoView.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/homeProjectsController.js"></script>
+    <script src="scripts/controllers/routes.js"></script>
+  </body>
+</html>
