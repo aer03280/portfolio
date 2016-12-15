@@ -1,28 +1,23 @@
 (function(module) {
-  var repos = {};
+  var reposObj = {};
 
-  repos.allRepos = [];
-  repos.requestRepos = function(callback) {
-// TODONE: create a githubToken.js file that we can use to generate our headers
-         // properly.
-    $.ajax({
-      url: 'https://api.github.com/users/aer03280/repos',
-      type: 'GET',
-      headers: {'Authorization': 'token ' + process.env.GITHUB_TOKEN},
-      success:
-      function(data) {
-        repos.allRepos = data;
-        console.log(data);
-        callback();
-      }
+  reposObj.requestRepos = function(callback) {
+    // NOTE: refactor this request into an $.get call
+    $.when(
+     $.get('/github/users/codefellows-seattle-301d14/repos', function(data) {
+       reposObj.allRepos = data;
+     }),
+     $.get('/github/users/aer03280/followers', function(data) {
+       reposObj.followers = data;
+     })
+    ).done(callback);
+  };
+
+  reposObj.withTheAttribute = function(attr) {
+    return reposObj.allRepos.filter(function(aRepo) {
+      return aRepo[attr];
     });
   };
 
-  repos.withTheAttribute = function(myAttr) {
-    return repos.allRepos.filter(function(aRepo) {
-      return aRepo[myAttr];
-    });
-  };
-
-  module.repos = repos;
+  module.reposObj = reposObj;
 })(window);
