@@ -9,22 +9,24 @@
       <link rel="stylesheet" href="styles/modules.css">
       <script src="https://use.fontawesome.com/40aae31390.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Josefin+Sans" rel="stylesheet">
-      <script id="project-template" type="text/x-handlebars-template">
+      <!-- <script id="project-template" type="text/x-handlebars-template"> -->
+      <script id="repo-template" type="text/x-handlebars-template">
         <article class="article-data">
         <div id="backgroundBox">
-        <header id="headerStyle">
-          <div id="titleStyle"><h1 id="hOneStyle">{{title}}</h1></div>
-          <div class="date">{{publishStatus}}</div>
-          <div>
-            <div id="previewBox">
-            <a href="{{{previewUrl}}}" target="_blank"><img id="previewImg" src="{{{preview}}}"></a>
-            <div id="descriptionStyle"><p>{{{description}}}</p></div>
+          <header id="headerStyle">
+            <div id="titleStyle"><h1 id="hOneStyle">{{name}}</h1></div>
+            <!-- <div class="date">{{publishStatus}}</div> -->
+            <div>
+              <div id="previewBox">
+              <a href="{{{previewUrl}}}" target="_blank"><img id="previewImg" src="{{{preview}}}"></a>
+              <div id="descriptionStyle"><p>{{{description}}}</p></div>
             </div>
+            </div>
+          </header>
         </div>
-        </header>
-      </div>
         </article>
       </script>
+      <!-- </script> -->
       <script id="assigned-filter-template" type="text/x-handlebars-template">
         <option value="{{assigned}}">{{assigned}}</option>
       </script>
@@ -50,7 +52,7 @@
   </section>
   </header>
   <main>
-    <section id="projects"></section>
+    <section id="projects">
     <div id="filterStyle">
       <ul id="filters">
         <li>
@@ -65,13 +67,13 @@
         </li>
       </ul>
     </div>
+    <ul class="projectList">testing
+    </ul>
+  </section>
     <section id="aboutMe" class="navContent">
       <header>
-        <h1>About Ashley</h1>
+        <h1>This is a paragraph about Ashley:</h1>
       </header>
-      <section>
-        <p>This will be a paragraph about me!</p>
-      </section>
     </section>
     </main>
     <footer class="foot">&#169 2016 | Portfolio | Ashley Ross</footer>
@@ -79,8 +81,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="scripts/data.js" charset="utf-8"></script>
+    <script type="text/javascript" src="token/githubToken.js"></script>
+
     <!-- <script type="text/javascript" src="scripts/projectView.js" charset="utf-8"></script> -->
     <script type="text/javascript" src="scripts/app.js" charset="utf-8"></script>
+    <script src="repos/repo.js"></script>
+    <script src="repos/repoView.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/homeProjectsController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
